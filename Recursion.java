@@ -20,8 +20,14 @@ public class Recursion {
 			return f(n-1,two+one, one, two+one);
 		}
 	}
+	public static int fib(int n) {
+		return f(n,0,0,1);
+	}
 	public static void main(String[] args) {
 		System.out.println("" + sqrt(64));
+		System.out.println("" + fib(0));
+		System.out.println("" + fib(1));
+		System.out.println("" + fib(5));
 	}	
 }
 
