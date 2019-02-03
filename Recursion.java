@@ -24,7 +24,18 @@ public class Recursion {
 		return f(n, 0, 0, 1);
 	}
 	public static ArrayList<Integer> makeAllSums(int n) {
-		return m(int n-1, )
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		m(n,0,list);
+		return list;
+	}
+	private static void m(int n, int sum, ArrayList<Integer> list) {
+		if (n >= 1) {
+			m(n-1,sum+n, list);
+			m(n-1,sum, list);
+		}
+		else {
+			list.add(sum);
+		}
 	}
 	public static void main(String[] args) {
 		System.out.println("" + sqrt(64));
@@ -35,6 +46,9 @@ public class Recursion {
 		System.out.println("" + fib(4));
 		System.out.println("" + fib(5));
 		System.out.println("" + fib(6));
+		System.out.println("" + makeAllSums(3));
+    	System.out.println("" + makeAllSums(20));
+    	System.out.println("" + makeAllSums(7));
 	}	
 }
 
