@@ -12,22 +12,26 @@ public class Recursion {
 	public static double sqrt(double n) {
 		return sqrtHelp(n, 1);	
 	}
-	public static int f(int n, int sum, int two, int one) {
-		if (n == 0) {
+	public static int f(int n, int sum, int prev, int old) {
+		if (n <= 0) {
 			return sum;
 		}
 		else {
-			return f(n-1,two+one, one, two+one);
+			return f(n-1, prev+old,prev+old,prev);
 		}
 	}
 	public static int fib(int n) {
-		return f(n,0,0,1);
+		return f(n, 0, 0, 1);
 	}
 	public static void main(String[] args) {
 		System.out.println("" + sqrt(64));
 		System.out.println("" + fib(0));
 		System.out.println("" + fib(1));
+		System.out.println("" + fib(2));
+		System.out.println("" + fib(3));
+		System.out.println("" + fib(4));
 		System.out.println("" + fib(5));
+		System.out.println("" + fib(6));
 	}	
 }
 
