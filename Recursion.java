@@ -1,4 +1,4 @@
-import java.io.*;
+import java.util.*;
 public class Recursion {
 	public static double sqrtHelp(double n, double g)	 {
 		if (Math.abs((g*g - n)/n) <= .0001) {
@@ -22,6 +22,9 @@ public class Recursion {
 	}
 	public static int fib(int n) {
 		return f(n, 0, 0, 1);
+	}
+	public static ArrayList<Integer> makeAllSums(int n) {
+		return m(int n-1, )
 	}
 	public static void main(String[] args) {
 		System.out.println("" + sqrt(64));
