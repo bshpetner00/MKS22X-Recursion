@@ -12,7 +12,14 @@ public class Recursion {
 	public static double sqrt(double n) {
 		return sqrtHelp(n, 1);	
 	}
-
+	public static int f(int n, int sum, int two, int one) {
+		if (n == 0) {
+			return sum;
+		}
+		else {
+			return f(n-1,two+one, one, two+one);
+		}
+	}
 	public static void main(String[] args) {
 		System.out.println("" + sqrt(64));
 	}	
