@@ -1,16 +1,16 @@
 import java.util.*;
 public class recursion {
-	public static double sqrtHelp(double n, double g)	 {
-		if (Math.abs((g*g - n)/n) <= .0001) {
+	public static double sqrtHelp(double n, double g, double p)	 {
+		if (Math.abs((g*g - n)/n) <= p) {
 			return g;
 		}
 		else {
 			g = (n / g + g) / 2;
-			return sqrtHelp(n,g);
+			return sqrtHelp(n,g,p);
 		}
 	}
-	public static double sqrt(double n) {
-		return sqrtHelp(n, 1);	
+	public static double sqrt(double n, double p) {
+		return sqrtHelp(n, 1, p);	
 	}
 	public static int f(int n, int sum, int prev, int old) {
 		if (n <= 0) {
