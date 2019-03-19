@@ -1,5 +1,5 @@
 import java.util.*;
-public class Recursion {
+public class recursion {
 	public static double sqrtHelp(double n, double g)	 {
 		if (Math.abs((g*g - n)/n) <= .0001) {
 			return g;
