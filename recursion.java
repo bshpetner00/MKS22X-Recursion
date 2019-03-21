@@ -2,10 +2,16 @@ import java.util.*;
 public class recursion {
 
 	public static double sqrtHelp(double n, double g, double p)	 {
-		if (closeEnough(g,Math.pow(n,0.5))) return g;
-    return sqrtHelp(n, (n / g + g), p);
+		double diff = Math.abs(g-Math.pow(n,0.5));
+		if (diff < p) {
+			return g;
+		} 
+    	return sqrtHelp(n, (n / g + g)/2, p);
 	}
 	public static double sqrt(double n, double p) {
+		if (n == 0.0) {
+			return 0.0;
+		}
 		return sqrtHelp(n, 1, p);	
 	}
 	public static int f(int n, int sum, int prev, int old) {
