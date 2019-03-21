@@ -1,13 +1,9 @@
 import java.util.*;
 public class recursion {
+
 	public static double sqrtHelp(double n, double g, double p)	 {
-		if (Math.abs((g*g - n)/n) <= p) {
-			return g;
-		}
-		else {
-			g = (n / g + g) / 2;
-			return sqrtHelp(n,g,p);
-		}
+		if (closeEnough(g,Math.pow(n,0.5))) return g;
+    return sqrtHelp(n, (n / g + g), p);
 	}
 	public static double sqrt(double n, double p) {
 		return sqrtHelp(n, 1, p);	
@@ -38,13 +34,6 @@ public class recursion {
 		}
 	}
 	public static void main(String[] args) {
-		System.out.println("Squirt " + sqrt(64));
-		System.out.println("Lie " + fib(0));
-		System.out.println("Lie " + fib(1));
-		System.out.println("Lie " + fib(2));
-		System.out.println("Lie " + fib(5));
-		System.out.println("Sun " + makeAllSums(3));
-    	System.out.println("Sun " + makeAllSums(2));
 	}	
 }
 
